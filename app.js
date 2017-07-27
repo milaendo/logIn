@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 
 app.get("/", function(req, res, next){
 	if (req.session.isloggedIn === true){
-		res.render("index")
+		res.render("index",{userName:userName})
 	}else{
   	res.redirect("/login")
   }
